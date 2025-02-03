@@ -1,0 +1,11 @@
+---
+
+interface Props {
+    cityname?:string
+}
+
+const {cityname='no name'}=Astro.props
+
+---
+
+<mark>My city name is {cityname} </mark>

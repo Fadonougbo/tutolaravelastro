@@ -1,0 +1,77 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import '../../public/index.css'
+import City from "../components/City.astro";
+import Counter from '../components/Counter.astro';
+import Country from '../components/Country.astro';
+import Table from '../components/Table.astro'
+import {DayDate} from '../components/frontend/DayDate'
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <ClientRouter />
+
+</head>
+<body transition:animate="slide" >
+
+    <h1>Home</h1>
+    <a href="/about" data-astro-history="push">about</a> 
+    <a href="/about"  data-astro-reload>about2</a> 
+    <button data-pfh>click for prefetch</button>
+    
+    
+    <DayDate client:visible name="myanmedodo"  >
+        <h2>Menu***********</h2>
+        <City cityname="Cotonou" slot='menuslot' />
+        <h3 slot="menuslot" >Menu+++++++++++</h3>
+    </DayDate>
+    
+    <Counter  />
+    
+
+    <h1 >OLD element</h1>
+
+    <audio src="/mark_ronson_uptown_funk_ft._bruno_mars_mp3_82844.mp3" transition:persist="audio" controls></audio>
+
+
+    <Country class="essai">
+
+        <ul>
+            <li >Benin</li>
+            <li>Japon</li>
+            <li  >Russie</li>
+        </ul>
+
+        <p slot="strong" >
+            Chine
+        </p>
+
+        <p slot="line" >france</p>
+        <p slot="line" >togo</p>
+    </Country>
+
+    <Table>
+        <tr slot="head-element" >
+            <th>name</th>
+            <th>age</th>
+        </tr>
+        <Fragment slot="body-element">
+            <tr>
+                <td>John</td>
+                <td>Doe</td>
+            </tr>
+
+            <tr>
+                <td>Gaut</td>
+                <td>Bji</td>
+            </tr>
+        </Fragment>
+    </Table>
+</body>
+</html>

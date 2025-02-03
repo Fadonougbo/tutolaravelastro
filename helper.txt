@@ -1,0 +1,24 @@
+************************
+
+typscript alias
+
+import Button from '../../components/controls/Button.astro';
+import logoUrl from '../../assets/logo.png?url';
+
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@assets/*": ["src/assets/*"]
+    }
+  }
+}
+
+import Button from '@components/controls/Button.astro';
+import logoUrl from '@assets/logo.png?url';
+
+
+continu avec les frontends framworks
+
+

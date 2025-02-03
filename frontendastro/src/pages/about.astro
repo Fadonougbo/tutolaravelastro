@@ -1,0 +1,35 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import '../../public/index.css'
+import AboutScript from '../components/AboutScript.astro';
+import ClickEssai from '../components/ClickEssai.astro';
+import Counter from '../components/Counter.astro';
+
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <ClientRouter />
+    <AboutScript/>
+
+</head>
+<body transition:animate="slide" data-about-body>
+
+    <button id="testclick">test</button>
+    <h1>About</h1>
+    <a href="/home" >go to home</a>
+    <audio src="/mark_ronson_uptown_funk_ft._bruno_mars_mp3_82844.mp3"   transition:persist="audio"  controls></audio>
+    <Counter />
+    <ClickEssai />
+    <form action="/home" method="GET" >
+    <input type="text" name="homedata" id="">
+    <button>submit</button>
+    </form>
+
+    <h1 >NEW element</h1>
+
+</body>
+</html>
