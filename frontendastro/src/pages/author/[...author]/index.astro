@@ -1,0 +1,27 @@
+---
+import type { GetStaticPaths } from "astro";
+import Base from "../../../layouts/Base.astro";
+export const prerender = true;
+
+
+export const authors=[
+        {params: {author:'doe'} },
+        {params: {author:'gaut'} },
+        {params: {author:'hulk'} },
+        {params: {author:'stark/dark/avenger'} }
+
+    ]
+
+export const getStaticPaths = () => {
+    
+    return authors;
+};
+
+const {author}=Astro.params
+
+
+---
+
+<Base>
+    <h1>Le nom de l'auteur est <mark>{author}</mark> </h1>
+</Base>

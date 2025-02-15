@@ -1,0 +1,69 @@
+---
+import Button from "../../../components/Button.astro";
+import List from "../../../components/List.astro";
+import Base from "../../../layouts/Base.astro";
+import {Color,Country} from "../../../components/frontend/Color"
+
+import '../../../css/user.css'
+import { ClientRouter } from "astro:transitions";
+
+
+
+const {user}=Astro.params
+
+const data=['hulk','stark','sandman']
+
+
+---
+
+<Base title={user} >
+
+    <Fragment slot='vt' >
+        <ClientRouter />
+    </Fragment>
+
+    <header>
+        <nav>
+            <a href="/users/data">go to data page</a>
+        </nav>
+    </header>
+
+    page {user}
+
+
+    <br/>
+
+    <Button content="bouton de test" />
+
+    <button class:list={['essai', {yellow:true} ]} >test</button>
+
+    <List>
+
+        <li slot="start" > START <mark> >= </mark>  </li>
+        <li slot="end" > END <mark> >= </mark>  </li>
+        <li><mark>=></mark>  gaut</li>
+        <li><mark>=></mark> jhi</li>
+        <li><mark>=></mark> kokolo</li>
+
+        <Fragment slot='li-list' >
+
+            {
+                data.map((d)=> {
+                    return <li><mark>=></mark> {d}</li>
+                })
+            }
+        </Fragment>
+
+
+    </List>
+
+    <!-- <section style={{height:'100px'}} ></section> -->
+    <Color client:visible defaultcolor="green" transition:name="color_price" />
+
+    <Country>
+        <li>Chine</li>
+        <li>Japon</li>
+        <li slot="first" >Brésile</li>
+        <li slot="second" >USA</li>
+    </Country>
+</Base>

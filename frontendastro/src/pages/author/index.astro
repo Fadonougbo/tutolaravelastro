@@ -1,0 +1,16 @@
+---
+import Base from "../../layouts/Base.astro";
+import { authors } from "./[...author]/index.astro";
+export const prerender = true;
+
+/* export const prerender = false; */
+/* console.log(Astro.request.headers.get('cookie')?.split(';')); */
+---
+
+<Base>
+    {
+        authors.map(({params})=> {
+            return <a href={`/author/${params.author}`}>=>{params.author}</a> <br/>
+        })
+    }
+</Base>

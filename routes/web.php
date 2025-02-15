@@ -6,13 +6,21 @@ use Illuminate\Support\Facades\View;
 
 Route::get('/', function () {
     
-    return View::file('indexoriginal.html');
+    return View::file('index.html');
 });
 
-Route::fallback(function(){
+/* Route::fallback(function(){
    
     return View::file('404.html');
 });
+ */
+Route::get('/fake/api',function() {
+
+    return response()->json(['success'=>'gaut6']);
+});
+
+Route::view('/fake/tes','indexoriginal.html');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

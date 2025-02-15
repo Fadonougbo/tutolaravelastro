@@ -1,0 +1,22 @@
+---
+
+interface Props {
+    content:string
+}
+
+ const {content}=Astro.props
+
+ const color='green';
+---
+<!-- <style is:global define:vars={{color}}>
+    .essai {
+        background: #000;
+        color:var(--color);
+        padding: 0.8rem;
+        border-radius: 3px;
+        margin-inline: 3px;
+    }
+</style> -->
+
+<button  class="essai" >{content}</button>
+

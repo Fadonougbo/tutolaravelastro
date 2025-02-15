@@ -18,7 +18,7 @@ import logoUrl from '../../assets/logo.png?url';
 import Button from '@components/controls/Button.astro';
 import logoUrl from '@assets/logo.png?url';
 
-
+continu avec la pagination
 continu avec les frontends framworks
 
 

@@ -1,0 +1,64 @@
+---
+import Base from '../../../../layouts/Base.astro';
+
+
+export const prerender = true;
+
+export const authors=[
+         {author:'doe'} ,
+         {author:'gaut'} ,
+         {author:'hulk'} ,
+         {author:'stark'} 
+
+    ]
+
+const heros=[
+    {c:'red',name:'antman'},
+    {c:'green',name:'hulk'},
+    {c:'dark',name:'batman'},
+    {c:'red',name:'ironman'},
+    {c:'red',name:'superman'},
+    {c:'green',name:'arrow'}
+];
+
+const tags=['red','green','dark'];
+
+export const getStaticPaths = ({paginate}) => {
+
+    const heros=[
+    {c:'red',name:'antman'},
+    {c:'green',name:'hulk'},
+    {c:'dark',name:'batman'},
+    {c:'red',name:'ironman'},
+    {c:'red',name:'superman'},
+    {c:'green',name:'arrow'}
+];
+
+const tags=['red','green','dark'];
+    
+    return tags.flatMap((tag,key)=> {
+        const filtering=heros.filter((hero,key)=>hero.c===tag)
+
+        return paginate(filtering,{
+            pageSize:2,
+            params:{color:tag}
+        })
+    })
+};
+
+const {page}=Astro.props
+
+---
+
+<Base>
+    {
+        page.data.map(({name})=> {
+
+            return <h1>Le nom de l'auteur est <mark>{name}</mark> </h1>
+        })
+    }
+    {page.url.first ? <a href={page.url.first}>First</a> : null}
+    {page.url.prev ? <a href={page.url.prev}>Previous</a> : null}
+    {page.url.next ? <a href={page.url.next}>Next</a> : null}
+    {page.url.last ? <a href={page.url.last}>Last</a> : null}
+</Base>
