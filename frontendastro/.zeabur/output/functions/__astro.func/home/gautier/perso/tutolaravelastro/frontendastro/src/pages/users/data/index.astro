@@ -1,0 +1,38 @@
+---
+import Base from "../../../layouts/Base.astro";
+/* import { ClientRouter } from 'astro:transitions';
+ */
+
+const price=Astro.url.searchParams.get('price')
+
+---
+
+<Base title="Page data" transition:name="root" transition:animate={'slide'}>
+
+    <script>
+        console.log('okok')
+
+    </script>
+
+    <Fragment slot='vt' >
+       <!--  <ClientRouter /> -->
+    </Fragment>
+
+    <header>
+        <nav>
+            <a href="/users/gautier2002?price=98763">go to gautier2002 page</a>
+        </nav>
+    </header>
+
+    <form action="/submit" method="POST" data-astro-reload>
+        <input type="text" name="name" id="" />
+        <button type="submit" >click me</button>
+    </form>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora aliquid placeat cumque, minus eum nesciunt dolor quis vitae voluptatum, repudiandae a repellat ipsum aspernatur sed maiores necessitatibus possimus exercitationem eius soluta quia facilis corporis tempore repellendus? Enim, dignissimos laboriosam. At dolore eum consequatur tempora ipsum voluptate non a sed adipisci ad iusto doloremque quasi pariatur illum, quaerat, reprehenderit rem itaque odio nobis? Tempora, illo? Sint molestias excepturi inventore nemo! Voluptatem, accusantium harum incidunt facilis assumenda exercitationem porro ab ullam? Aut quos beatae eaque veniam soluta exercitationem iste labore dolore temporibus rerum perspiciatis dicta harum aspernatur, quod suscipit mollitia similique accusantium non. Laborum quam natus nesciunt vel, architecto accusantium sint laboriosam dolores dignissimos incidunt cupiditate at mollitia doloremque enim nobis ratione maxime, aliquid suscipit qui? Ipsa eaque omnis sit modi, maxime libero? Odit, ipsam quae delectus eos debitis eaque eius eveniet minus earum excepturi ab libero voluptatibus maiores inventore distinctio ad harum in quasi asperiores. Ducimus unde sed illo qui voluptas, sapiente perspiciatis tempore? Magni, vero. Reiciendis tempora soluta, incidunt rem nesciunt dolorum repellendus non veritatis facere, odio quod. Numquam odit at praesentium magni sit? Adipisci consequatur et doloribus numquam a perspiciatis sit quo nostrum molestias fugiat nobis beatae tempora vero sequi cum aperiam debitis reprehenderit distinctio magnam, labore assumenda odit eos mollitia repellat. Ex, temporibus maxime, culpa, accusantium dicta cum nisi repellat est vitae tempore corporis repellendus dolorem impedit necessitatibus libero doloremque? Sed blanditiis dolorem sequi vitae aspernatur accusantium sapiente at in neque accusamus, quas incidunt modi possimus praesentium, temporibus, illo
+        <h1 transition:name="color_price"  ><strong>{price??0}$</strong></h1>
+        debitis aperiam voluptates itaque illum dicta officia ad. Laboriosam rerum neque quod natus eos laudantium sint excepturi veritatis, suscipit repellendus accusamus saepe consequuntur atque ipsum nobis earum id omnis sunt ut. Maiores ab placeat consectetur, totam, minus sequi, itaque nesciunt asperiores blanditiis aperiam cum praesentium eaque facilis magni. Perferendis consequatur expedita officia totam veniam ut sit! Nihil illo, ipsa maxime voluptatibus rerum enim, assumenda ratione explicabo expedita et minima praesentium architecto itaque dolores aperiam dignissimos veniam nemo fugit corrupti ex tenetur voluptas magni? Soluta consequatur ipsum, possimus facere amet in ipsa porro eligendi dicta vel fuga similique assumenda cupiditate perferendis eius odit, mollitia eos harum, illo esse veritatis culpa distinctio. Reiciendis qui tempore eius voluptatibus porro iure. Nobis soluta facilis dolore eius dicta mollitia dolorum ex? Architecto ex cumque ab commodi praesentium nihil culpa consequuntur, iure, blanditiis molestias odio dicta aperiam impedit fugit sequi voluptatum quos aliquid tempora ad!</p>
+
+    <h1>Hello test doe okok</h1>
+
+</Base>
