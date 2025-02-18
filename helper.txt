@@ -18,7 +18,10 @@ import logoUrl from '../../assets/logo.png?url';
 import Button from '@components/controls/Button.astro';
 import logoUrl from '@assets/logo.png?url';
 
-continu avec la pagination
-continu avec les frontends framworks
-
+*********************
+continu la decouverte de astro avec la partie serveur rendering
+tuto astro bag trick
+heberge un projet astro sur zeabur
+tuto astro video
+cree des templates payant pour astro
 

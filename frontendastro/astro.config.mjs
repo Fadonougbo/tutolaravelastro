@@ -1,11 +1,12 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, sharpImageService } from 'astro/config';
 
 import react from '@astrojs/react';
 
 import tailwind from '@astrojs/tailwind';
 
 import node from '@astrojs/node';
+import { imageService } from '@unpic/astro/service';
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,5 +14,7 @@ export default defineConfig({
   adapter:node({
     mode: 'middleware'
   }),
-  output:'server'
+ image:{
+  service:imageService({})
+ }
 });

@@ -5,26 +5,27 @@ import Base from "../../../layouts/Base.astro";
 import {Color,Country} from "../../../components/frontend/Color"
 
 import '../../../css/user.css'
-import { ClientRouter } from "astro:transitions";
-
-
+/* import { ClientRouter } from "astro:transitions";
+ */
 
 const {user}=Astro.params
 
 const data=['hulk','stark','sandman']
 
+const price=Astro.url.searchParams.get('price')
 
+export const prerender = false
 ---
 
-<Base title={user} >
+<Base title={user} transition:name="root" transition:animate={'slide'}>
 
     <Fragment slot='vt' >
-        <ClientRouter />
+        <!-- <ClientRouter /> -->
     </Fragment>
 
     <header>
         <nav>
-            <a href="/users/data">go to data page</a>
+            <a href="/users/data?price=400000">go to data page</a>
         </nav>
     </header>
 
@@ -58,7 +59,7 @@ const data=['hulk','stark','sandman']
     </List>
 
     <!-- <section style={{height:'100px'}} ></section> -->
-    <Color client:visible defaultcolor="green" transition:name="color_price" />
+    <Color client:visible defaultcolor="green" />
 
     <Country>
         <li>Chine</li>
@@ -66,4 +67,6 @@ const data=['hulk','stark','sandman']
         <li slot="first" >Brésile</li>
         <li slot="second" >USA</li>
     </Country>
+
+    <h1 transition:name="color_price"  ><strong>{price??0}$</strong></h1>
 </Base>
