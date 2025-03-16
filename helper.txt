@@ -23,5 +23,6 @@ continu la decouverte de astro avec la partie serveur rendering
 tuto astro bag trick
 heberge un projet astro sur zeabur
 tuto astro video
+creation du portefolio
 cree des templates payant pour astro
 
